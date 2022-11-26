@@ -18,8 +18,8 @@ struct TopMoversView: View {
                 //By having some of the cell cut off it indicates to the user that it is a scrollable view which is a nice UI trick 
                 HStack(spacing: 16){
                     //anytime you create views in SWiftUI with a for each loop, each view needs its own UID
-                    ForEach(0..<5, id: \.self) { _ in
-                        TopMoversItemView()
+                    ForEach(viewModel.topMovingCoins) { coin in
+                        TopMoversItemView(coin: coin)
                     }
                     
                 }

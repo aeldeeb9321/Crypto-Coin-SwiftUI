@@ -10,6 +10,7 @@ import SwiftUI
 //THis home vm will be responsible for communicating with the api, downloading coin data then updating our UI
 class HomeViewModel: ObservableObject{
     @Published var coins = [Coin]()
+    @Published var topMovingCoins = [Coin]()
     private let session = URLSession(configuration: .default)
     
     //When we initialize the homeViewModel it will call the fetchCoinData
@@ -34,11 +35,19 @@ class HomeViewModel: ObservableObject{
             
             do{
                 let coinData = try decoder.decode([Coin].self, from: data)
-                self.coins = coinData
+                DispatchQueue.main.async {
+                    self.coins = coinData
+                    self.configureTopMovingCoins()
+                }
                 //completion(coinData)
             }catch let error{
                 print("DEBUG: \(error.localizedDescription)")
             } 
         }.resume()
+    }
+    
+    func configureTopMovingCoins(){
+        let topMovers = coins.sorted(by: {abs($0.priceChangePercentage24H) > abs($1.priceChangePercentage24H) })
+        self.topMovingCoins = Array(topMovers.prefix(10))
     }
 }
