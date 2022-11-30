@@ -16,7 +16,6 @@ struct TopMoversItemView: View {
             KFImage(URL(string: coin.image))
                 .resizable()
                 .frame(width: 32, height: 32)
-                .foregroundColor(.orange)
                 .padding(8)
             //coin info
             HStack(spacing: 2){

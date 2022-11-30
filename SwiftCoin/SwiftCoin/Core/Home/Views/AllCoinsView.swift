@@ -15,17 +15,7 @@ struct AllCoinsView: View {
             Text("All Coins")
                 .font(.headline)
                 .padding()
-            HStack{
-                Text("Coin")
-                
-                Spacer()
-                
-                Text("Price")
-                    
-            }
-                .padding(.horizontal, 6)
-                .font(.caption)
-                .foregroundColor(.gray)
+            labelSetupView()
             
             ScrollView{
                 VStack{
@@ -39,8 +29,18 @@ struct AllCoinsView: View {
     }
 }
 
-//struct AllCoinsView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        AllCoinsView()
-//    }
-//}
+struct labelSetupView: View {
+    var body: some View {
+        HStack{
+            Text("Coin")
+            
+            Spacer()
+            
+            Text("Price")
+            
+        }
+        .padding(.horizontal, 6)
+        .font(.caption)
+        .foregroundColor(.gray)
+    }
+}

@@ -72,8 +72,6 @@
 				253529FC29319DBC00FB2347 /* Model */,
 				253529FB29319DB400FB2347 /* App */,
 				253529FA29319DA300FB2347 /* Core */,
-				253529F929319D9D00FB2347 /* Utils */,
-				253529F829319D8900FB2347 /* Service */,
 				25352A662932B7E300FB2347 /* Extensions */,
 				253529F029319D6400FB2347 /* Preview Content */,
 				253529EC29319D6200FB2347 /* ContentView.swift */,
@@ -88,20 +86,6 @@
 				253529F129319D6400FB2347 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
-			sourceTree = "<group>";
-		};
-		253529F829319D8900FB2347 /* Service */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Service;
-			sourceTree = "<group>";
-		};
-		253529F929319D9D00FB2347 /* Utils */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Utils;
 			sourceTree = "<group>";
 		};
 		253529FA29319DA300FB2347 /* Core */ = {
